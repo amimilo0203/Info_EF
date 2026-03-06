@@ -128,13 +128,12 @@ public class OptimizedPQSort {
 
         return new int[]{a[lo], a[hi]};
     }
-    // Optimiertes Insertion Sort mit binärer Suche für größere Elemente
+    //Insertion Sort für wenig Elemente
     private static void insertionSort(int[] a, int lo, int hi) {
         for (int i = lo + 1; i <= hi; i++) {
             int key = a[i];
 
             if (key < a[lo]) {
-                // Schneller Pfad: Element gehört an den Anfang
                 System.arraycopy(a, lo, a, lo + 1, i - lo);
                 a[lo] = key;
             } else {
